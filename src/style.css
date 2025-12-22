@@ -1,11 +1,13 @@
 body {
   text-align: center;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+/* this is the larger box*/
 .container {
   background: linear-gradient(
     178.6deg,
@@ -13,28 +15,46 @@ body {
     rgb(253, 242, 226) 109.6%
   );
   max-width: 600px;
-  margin: 120px auto;
+  margin: 20px auto;
   border-radius: 16px;
-  padding: 30px;
+  padding: 10px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.container p {
+  color: rgb(62, 61, 62);
+  line-height: 0.7;
+}
+.result-container {
+  background: linear-gradient(rgb(253, 242, 226), rgb(238, 187, 135));
+  max-width: 600px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(241, 197, 153, 0.408);
+  background: none;
   border-radius: 7px;
   padding: 3px 3px;
   width: fit-content;
   margin: 0 auto;
   gap: 10px;
 }
-.search-bar-button {
+
+.search-bar {
   padding: 10px 15px;
   border-radius: 6px;
   border: none;
   font-size: 16px;
   width: 420px;
+}
+
+input:hover {
+  color: none;
 }
 
 input[type="submit"] {
@@ -43,21 +63,43 @@ input[type="submit"] {
   border: none;
   font-size: 16px;
   cursor: pointer;
+  color: rgb(62, 61, 62);
 }
-
+/* this is the heading text*/
 .container h1 {
   padding-top: 10px;
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(62, 61, 62);
   font-weight: 300;
 }
+.result-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(253, 242, 226, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.holiday-result {
+  font-size: 18px;
+  color: rgb(62, 61, 62);
+  line-height: 1.6;
+}
+/* this is the smaller box in the middle */
 main {
   flex: 1;
   padding: 10px 15px;
   border-radius: 6px;
-  background-color: rgba(229, 161, 94, 0.39);
+  background-color: rgba(229, 161, 94, 0.147);
 }
+
 footer {
   text-align: center;
+  color: rgb(62, 61, 62);
+  font-size: 12px;
   padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }

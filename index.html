@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>My First Page</title>
   </head>
@@ -17,13 +18,15 @@
           a few tips, add climate hot☀️ or cold❄️, are looking for advetuer🏂 or
           relaxation🏖️
         </p>
-        <div>
-          <div class="button">
-        <form>
-          <input type="text" placeholder="Enter description" class="search-bar-button" />
-          <input type="Submit"/>
-        </form>
-        </div>
+        <div class="button">
+          <form id="holiday-generator-form">
+            <input
+              type="text"
+              placeholder="Enter description"
+              class="search-bar"
+            />
+            <input type="Submit" />
+          </form>
       </main>
       <footer>
         This project was coded by
@@ -39,6 +42,9 @@
         >
       </footer>
     </div>
+    <div class="result-container">
+    <div class="holiday-result"></div>
+        </div>
     <script src="src/index.js"></script>
   </body>
 </html>
