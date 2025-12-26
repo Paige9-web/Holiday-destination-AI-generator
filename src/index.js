@@ -1,13 +1,19 @@
 function displayHoliday(response) {
   let resultElement = document.querySelector("#result");
   console.log("holiday generated");
+
+  if (!response || !response.answer) {
+    resultElement.innerHTML =
+      "I couldn't generate a holiday from that 😕 Try describing what you want.";
+
+    return;
+  }
+
   new Typewriter(resultElement, {
     strings: [response.answer],
     autoStart: true,
     delay: 20,
     cursor: "",
-    loop: false,
-    deleteSpeed: 0,
   });
 }
 
@@ -16,6 +22,23 @@ function generateHoliday(event) {
 
   let instructionsInput = document.querySelector("#user-instructions").value;
   let resultElement = document.querySelector("#result");
+
+  if (!instructionsInput) {
+    resultElement.innerHTML = "Please enter a description of your holiday 😊";
+
+    return;
+  }
+
+  let words = instructionsInput.split(/\s+/);
+
+  let letterCount = (instructionsInput.match(/[a-zA-Z]/g) || []).length;
+
+  if (words.length < 3 || letterCount < 5) {
+    resultElement.innerHTML =
+      "That doesn’t look like a full description 🤔 Try something like: 'Relaxing beach holiday in a warm place'.";
+
+    return;
+  }
   resultElement.innerHTML = "Generating a holiday... ✈️";
 
   let apiKey = "470c09f57bd9o90adc47e3t0cd74b0fc";
