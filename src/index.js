@@ -1,6 +1,5 @@
 function displayHoliday(response) {
   let resultElement = document.querySelector("#result");
-  console.log("holiday generated");
 
   if (!response || !response.answer) {
     resultElement.innerHTML =
@@ -48,13 +47,9 @@ function generateHoliday(event) {
     instructionsInput
   )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
-  console.log("generating holiday");
-
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log("API response:", data);
-
       displayHoliday(data);
     })
 
