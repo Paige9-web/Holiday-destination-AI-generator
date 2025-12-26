@@ -1,10 +1,13 @@
 function displayHoliday(response) {
+  let resultElement = document.querySelector("#result");
   console.log("holiday generated");
   new Typewriter(resultElement, {
-    strings: [data.answer],
+    strings: [response.answer],
     autoStart: true,
     delay: 20,
     cursor: "",
+    loop: false,
+    deleteSpeed: 0,
   });
 }
 
@@ -28,6 +31,13 @@ function generateHoliday(event) {
     .then((response) => response.json())
     .then((data) => {
       console.log("API response:", data);
+
+      displayHoliday(data);
+    })
+
+    .catch((error) => {
+      console.error("API error:", error);
+      resultElement.innerHTML = "Something went wrong 😢";
     });
 }
 
